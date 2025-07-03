@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <title>Weather App</title>
+</head>
+<body>
+  <section id="weather-section">
+    <div class="weather-card">
+      <div class="location">
+        <img src="./images/loc-icon.png" class="location-icon" />
+        <h1 class="city-name" id="location"></h1>
+      </div>
+      <p class="weather-description" id="weather"></p>
+      <p class="temperature" id="temp"></p>
+      <img id="icon" class="weather-icon" />
+      <button class="refresh-button" onclick="window.location.reload()">
+        <svg class="refresh-icon" viewBox="0 0 24 24">
+          <path d="M20 11a8.1 8.1 0 00-6.986-6.986A8.1 8.1 0 006 11v1h2v-1a6 6 0 016-6 6 6 0 016 6 6 6 0 01-6 6h-1v2h1a8 8 0 008-8z" />
+          <path d="M12 16l4-4-4-4" />
+        </svg>
+        <span>Refresh Data</span>
+      </button>
+    </div>
+  </section>
+  <script src="main.js"></script>
+</body>
+</html>

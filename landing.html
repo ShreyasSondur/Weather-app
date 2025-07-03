@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enter City - Weather App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section id="landing-section">
+    <div class="weather-card">
+      <div class="card-content">
+        <h1 class="title">Discover Your Weather</h1>
+        <p class="subtitle">Enter your city to get started</p>
+        <div class="input-group">
+          <input type="text" id="cityInput" placeholder="e.g. New York, London, Tokyo" autofocus />
+          <button id="submitBtn" class="weather-button">
+            <span>Get Weather</span>
+            <svg class="button-icon" viewBox="0 0 24 24">
+              <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const btn = document.getElementById('submitBtn');
+    btn.onclick = function() {
+      const city = document.getElementById('cityInput').value.trim();
+      if (!city) {
+        alert("Please enter a city name");
+        return;
+      }
+      window.location.href = `weather.html?city=${encodeURIComponent(city)}`;
+    };
+
+    document.getElementById('cityInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        btn.click();
+      }
+    });
+  </script>
+</body>
+</html>
